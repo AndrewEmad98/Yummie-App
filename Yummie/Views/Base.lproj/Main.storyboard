@@ -136,6 +136,7 @@
                         <outlet property="button" destination="TJe-2y-Yjg" id="lz8-2s-LAv"/>
                         <outlet property="collectionView" destination="zni-BM-FOT" id="Tcu-66-FYL"/>
                         <outlet property="pageControl" destination="K2p-v7-Cdd" id="eDf-p8-g7s"/>
+                        <segue destination="D9N-Ri-hIn" kind="presentation" identifier="GoToHomeNC" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="OWn-x9-cNN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
