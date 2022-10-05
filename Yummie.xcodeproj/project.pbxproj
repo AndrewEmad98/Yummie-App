@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		48FA471C28ECB65600BD762C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA471B28ECB65600BD762C /* AppDelegate.swift */; };
 		48FA471E28ECB65600BD762C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA471D28ECB65600BD762C /* SceneDelegate.swift */; };
-		48FA472028ECB65600BD762C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA471F28ECB65600BD762C /* ViewController.swift */; };
 		48FA472328ECB65600BD762C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FA472128ECB65600BD762C /* Main.storyboard */; };
 		48FA472528ECB65700BD762C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FA472428ECB65700BD762C /* Assets.xcassets */; };
 		48FA472828ECB65700BD762C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FA472628ECB65700BD762C /* LaunchScreen.storyboard */; };
 		48FA473328ECB65800BD762C /* YummieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA473228ECB65800BD762C /* YummieTests.swift */; };
 		48FA473D28ECB65800BD762C /* YummieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA473C28ECB65800BD762C /* YummieUITests.swift */; };
 		48FA473F28ECB65800BD762C /* YummieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA473E28ECB65800BD762C /* YummieUITestsLaunchTests.swift */; };
+		48FA475028ECBEBF00BD762C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA474F28ECBEBF00BD762C /* OnboardingViewController.swift */; };
+		48FA475328ECC6A900BD762C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA475228ECC6A900BD762C /* UIView+Extension.swift */; };
+		48FA475528ECCA7200BD762C /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA475428ECCA7200BD762C /* OnboardingSlide.swift */; };
+		48FA475728ECCEB700BD762C /* SlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA475628ECCEB700BD762C /* SlideCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 		48FA471828ECB65600BD762C /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FA471B28ECB65600BD762C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FA471D28ECB65600BD762C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48FA471F28ECB65600BD762C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		48FA472228ECB65600BD762C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48FA472428ECB65700BD762C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48FA472728ECB65700BD762C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		48FA473828ECB65800BD762C /* YummieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YummieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FA473C28ECB65800BD762C /* YummieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummieUITests.swift; sourceTree = "<group>"; };
 		48FA473E28ECB65800BD762C /* YummieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48FA474F28ECBEBF00BD762C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		48FA475228ECC6A900BD762C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		48FA475428ECCA7200BD762C /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		48FA475628ECCEB700BD762C /* SlideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4853D54C28EDA4C8001AC8DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48FA472128ECB65600BD762C /* Main.storyboard */,
+				48FA472628ECB65700BD762C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4853D54D28EDA4EE001AC8DD /* App Life Cycle */ = {
+			isa = PBXGroup;
+			children = (
+				48FA471B28ECB65600BD762C /* AppDelegate.swift */,
+				48FA471D28ECB65600BD762C /* SceneDelegate.swift */,
+			);
+			path = "App Life Cycle";
+			sourceTree = "<group>";
+		};
 		48FA470F28ECB65600BD762C = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +123,13 @@
 		48FA471A28ECB65600BD762C /* Yummie */ = {
 			isa = PBXGroup;
 			children = (
-				48FA471B28ECB65600BD762C /* AppDelegate.swift */,
-				48FA471D28ECB65600BD762C /* SceneDelegate.swift */,
-				48FA471F28ECB65600BD762C /* ViewController.swift */,
-				48FA472128ECB65600BD762C /* Main.storyboard */,
+				4853D54D28EDA4EE001AC8DD /* App Life Cycle */,
+				48FA475128ECC64600BD762C /* Extensions */,
+				48FA474D28ECBE8B00BD762C /* CustomViews */,
+				48FA474C28ECBE5A00BD762C /* ViewModels */,
+				48FA474B28ECBE5200BD762C /* Models */,
+				4853D54C28EDA4C8001AC8DD /* Views */,
 				48FA472428ECB65700BD762C /* Assets.xcassets */,
-				48FA472628ECB65700BD762C /* LaunchScreen.storyboard */,
 				48FA472928ECB65700BD762C /* Info.plist */,
 			);
 			path = Yummie;
@@ -125,6 +150,46 @@
 				48FA473E28ECB65800BD762C /* YummieUITestsLaunchTests.swift */,
 			);
 			path = YummieUITests;
+			sourceTree = "<group>";
+		};
+		48FA474B28ECBE5200BD762C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48FA475428ECCA7200BD762C /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48FA474C28ECBE5A00BD762C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				48FA474E28ECBE9B00BD762C /* Onboarding */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		48FA474D28ECBE8B00BD762C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		48FA474E28ECBE9B00BD762C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				48FA474F28ECBEBF00BD762C /* OnboardingViewController.swift */,
+				48FA475628ECCEB700BD762C /* SlideCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		48FA475128ECC64600BD762C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48FA475228ECC6A900BD762C /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48FA472028ECB65600BD762C /* ViewController.swift in Sources */,
+				48FA475528ECCA7200BD762C /* OnboardingSlide.swift in Sources */,
 				48FA471C28ECB65600BD762C /* AppDelegate.swift in Sources */,
 				48FA471E28ECB65600BD762C /* SceneDelegate.swift in Sources */,
+				48FA475328ECC6A900BD762C /* UIView+Extension.swift in Sources */,
+				48FA475728ECCEB700BD762C /* SlideCollectionViewCell.swift in Sources */,
+				48FA475028ECBEBF00BD762C /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
