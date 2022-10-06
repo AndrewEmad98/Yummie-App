@@ -8,9 +8,9 @@
 import UIKit
 
 extension UIView {
-    @IBInspectable var cornorRadios : CGFloat {
+    @IBInspectable var cornerRadios : CGFloat {
         get{
-            return self.cornorRadios
+            return self.cornerRadios
         }
         set{
             self.layer.cornerRadius = newValue
