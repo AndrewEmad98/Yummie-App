@@ -51,6 +51,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="lGg-95-Utx" firstAttribute="leading" secondItem="Jey-kS-0CH" secondAttribute="leading" id="4NS-mx-AEZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="lGg-95-Utx" secondAttribute="trailing" id="XBM-hq-uZd"/>
+                                    <constraint firstItem="lGg-95-Utx" firstAttribute="top" secondItem="mL1-5a-nhF" secondAttribute="bottom" constant="8" id="hSA-hT-Sdq"/>
+                                    <constraint firstItem="PhA-43-lpK" firstAttribute="top" secondItem="lGg-95-Utx" secondAttribute="bottom" constant="8" id="oLt-g3-b0C"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
