@@ -21,21 +21,28 @@ class HomeViewController: UIViewController {
         .init(id: "id4", name: "Egypt dishes5", image: "https://picsum.photos/200/300")
     ]
     
+    var popularDishes : [Dish] = [
+        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibFiles()
     }
     private func registerNibFiles(){
         foodCategoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        popularDishesCollectionView.register(UINib(nibName: PopularDishesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PopularDishesCollectionViewCell.identifier)
     }
 }
 
 //MARK: - collectionView Methods
-extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
+extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case foodCategoryCollectionView:
             return categories.count
+        case popularDishesCollectionView:
+            return popularDishes.count
         default:
             return 0
         }
@@ -47,9 +54,13 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
             cell.setup(category: categories[indexPath.row])
             return cell
+        case popularDishesCollectionView :
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularDishesCollectionViewCell.identifier, for: indexPath) as! PopularDishesCollectionViewCell
+            cell.setup(dish: popularDishes[indexPath.row])
+            return cell
         default:
             return UICollectionViewCell()
         }
     }
-    
+
 }
