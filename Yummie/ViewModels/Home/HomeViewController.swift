@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         .init(id: "id4", name: "Egypt dishes5", image: "https://picsum.photos/200/300")
     ]
     var popularDishes : [Dish] = [
-        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
+        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
         .init(id: "id2", name: "Tagen", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 300),
         .init(id: "id3", name: "Fool", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
     ]
@@ -76,5 +76,18 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             return UICollectionViewCell()
         }
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == foodCategoryCollectionView {
+            // go to category list screen
+        }else {
+            let dishDetailsVC = DishDetailsViewController.instantiate()
+            if collectionView == popularDishesCollectionView {
+                dishDetailsVC.currentDish = popularDishes[indexPath.row]
+            }else{
+                dishDetailsVC.currentDish = chefSpecialDishes[indexPath.row]
+            }
+            navigationController?.pushViewController(dishDetailsVC, animated: true)
+        }
+    }
 }
