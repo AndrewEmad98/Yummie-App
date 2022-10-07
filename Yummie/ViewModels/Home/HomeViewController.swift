@@ -20,8 +20,13 @@ class HomeViewController: UIViewController {
         .init(id: "id4", name: "Egypt dishes4", image: "https://picsum.photos/200/300"),
         .init(id: "id4", name: "Egypt dishes5", image: "https://picsum.photos/200/300")
     ]
-    
     var popularDishes : [Dish] = [
+        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
+        .init(id: "id2", name: "Tagen", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 300),
+        .init(id: "id3", name: "Fool", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
+    ]
+    
+    var chefSpecialDishes : [Dish] = [
         .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
         .init(id: "id2", name: "Tagen", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 300),
         .init(id: "id3", name: "Fool", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
@@ -34,6 +39,7 @@ class HomeViewController: UIViewController {
     private func registerNibFiles(){
         foodCategoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         popularDishesCollectionView.register(UINib(nibName: PopularDishesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PopularDishesCollectionViewCell.identifier)
+        chefsSpecialsCollectionView.register(UINib(nibName: ChefsSpecialsCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ChefsSpecialsCollectionViewCell.identifier)
     }
 }
 
@@ -45,6 +51,8 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             return categories.count
         case popularDishesCollectionView:
             return popularDishes.count
+        case chefsSpecialsCollectionView:
+            return chefSpecialDishes.count
         default:
             return 0
         }
@@ -52,13 +60,17 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
-        case foodCategoryCollectionView :
+        case foodCategoryCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
             cell.setup(category: categories[indexPath.row])
             return cell
-        case popularDishesCollectionView :
+        case popularDishesCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularDishesCollectionViewCell.identifier, for: indexPath) as! PopularDishesCollectionViewCell
             cell.setup(dish: popularDishes[indexPath.row])
+            return cell
+        case chefsSpecialsCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefsSpecialsCollectionViewCell.identifier, for: indexPath) as! ChefsSpecialsCollectionViewCell
+            cell.setup(dish: chefSpecialDishes[indexPath.row])
             return cell
         default:
             return UICollectionViewCell()

@@ -11,6 +11,8 @@
 		4881A64628F05C6100CB3A88 /* PopularDishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881A64428F05C6100CB3A88 /* PopularDishesCollectionViewCell.swift */; };
 		4881A64728F05C6100CB3A88 /* PopularDishesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4881A64528F05C6100CB3A88 /* PopularDishesCollectionViewCell.xib */; };
 		4881A64928F0601E00CB3A88 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881A64828F0601E00CB3A88 /* Dish.swift */; };
+		4881A64D28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881A64B28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.swift */; };
+		4881A64E28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4881A64C28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.xib */; };
 		48B8633028EF0FB900E67BCC /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8632E28EF0FB900E67BCC /* CategoryCollectionViewCell.swift */; };
 		48B8633128EF0FB900E67BCC /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B8632F28EF0FB900E67BCC /* CategoryCollectionViewCell.xib */; };
 		48B8633328EF120500E67BCC /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8633228EF120500E67BCC /* DishCategory.swift */; };
@@ -58,6 +60,8 @@
 		4881A64428F05C6100CB3A88 /* PopularDishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4881A64528F05C6100CB3A88 /* PopularDishesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishesCollectionViewCell.xib; sourceTree = "<group>"; };
 		4881A64828F0601E00CB3A88 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		4881A64B28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefsSpecialsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4881A64C28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefsSpecialsCollectionViewCell.xib; sourceTree = "<group>"; };
 		48B8632E28EF0FB900E67BCC /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		48B8632F28EF0FB900E67BCC /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		48B8633228EF120500E67BCC /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
@@ -163,9 +167,19 @@
 			path = PopularDishesCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		4881A64A28F07F7D00CB3A88 /* ChefsSpecialsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4881A64B28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.swift */,
+				4881A64C28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.xib */,
+			);
+			path = ChefsSpecialsCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		48B8632A28EF0EA100E67BCC /* CollectionViewsCells */ = {
 			isa = PBXGroup;
 			children = (
+				4881A64A28F07F7D00CB3A88 /* ChefsSpecialsCollectionViewCell */,
 				4881A64328F05C3F00CB3A88 /* PopularDishesCollectionViewCell */,
 				48B8632B28EF0EC200E67BCC /* CategoryCollectionViewCell */,
 			);
@@ -412,6 +426,7 @@
 				4881A64728F05C6100CB3A88 /* PopularDishesCollectionViewCell.xib in Resources */,
 				48FA472828ECB65700BD762C /* LaunchScreen.storyboard in Resources */,
 				48FA472528ECB65700BD762C /* Assets.xcassets in Resources */,
+				4881A64E28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.xib in Resources */,
 				48FA472328ECB65600BD762C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +565,7 @@
 				486B45E328EDC8D8004FE32E /* HomeViewController.swift in Sources */,
 				48B8633328EF120500E67BCC /* DishCategory.swift in Sources */,
 				48B8633528EF153F00E67BCC /* String+Extension.swift in Sources */,
+				4881A64D28F07FA500CB3A88 /* ChefsSpecialsCollectionViewCell.swift in Sources */,
 				48B8633828EF53E600E67BCC /* CardView.swift in Sources */,
 				4881A64928F0601E00CB3A88 /* Dish.swift in Sources */,
 				48FA475028ECBEBF00BD762C /* OnboardingViewController.swift in Sources */,
