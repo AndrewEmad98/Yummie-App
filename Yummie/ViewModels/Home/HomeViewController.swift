@@ -80,6 +80,17 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == foodCategoryCollectionView {
             // go to category list screen
+            let currentCategory = categories[indexPath.row]
+            var categoryDishes : [Dish] = []
+            let listDishesVC = ListDishesViewController.instantiate()
+            for dish in popularDishes {
+                if dish.id == currentCategory.id {
+                    categoryDishes.append(dish)
+                }
+            }
+            listDishesVC.categoryDishes = categoryDishes
+            listDishesVC.category = currentCategory.name
+            navigationController?.pushViewController(listDishesVC, animated: true)
         }else {
             let dishDetailsVC = DishDetailsViewController.instantiate()
             if collectionView == popularDishesCollectionView {
