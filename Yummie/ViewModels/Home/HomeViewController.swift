@@ -41,6 +41,8 @@ class HomeViewController: UIViewController {
         popularDishesCollectionView.register(UINib(nibName: PopularDishesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PopularDishesCollectionViewCell.identifier)
         chefsSpecialsCollectionView.register(UINib(nibName: ChefsSpecialsCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ChefsSpecialsCollectionViewCell.identifier)
     }
+
+    
 }
 
 //MARK: - collectionView Methods
@@ -81,14 +83,14 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
         if collectionView == foodCategoryCollectionView {
             // go to category list screen
             let currentCategory = categories[indexPath.row]
-            var categoryDishes : [Dish] = []
             let listDishesVC = ListDishesViewController.instantiate()
-            for dish in popularDishes {
-                if dish.id == currentCategory.id {
-                    categoryDishes.append(dish)
-                }
-            }
-            listDishesVC.categoryDishes = categoryDishes
+//            var categoryDishes : [Dish] = []
+//            for dish in popularDishes {
+//                if dish.id == currentCategory.id {
+//                    categoryDishes.append(dish)
+//                }
+//            }
+//            listDishesVC.categoryDishes = categoryDishes
             listDishesVC.category = currentCategory.name
             navigationController?.pushViewController(listDishesVC, animated: true)
         }else {

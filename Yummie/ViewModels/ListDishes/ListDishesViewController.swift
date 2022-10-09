@@ -10,7 +10,11 @@ import UIKit
 class ListDishesViewController: UIViewController {
 
     @IBOutlet weak var listDishesTableView: UITableView!
-    var categoryDishes : [Dish]!
+    var categoryDishes : [Dish] = [
+        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
+        .init(id: "id2", name: "Tagen", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 300),
+        .init(id: "id3", name: "Fool", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
+    ]
     var category : String!
     
     override func viewDidLoad() {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4802613228F0BBE60018ED0C /* DishDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802613128F0BBE60018ED0C /* DishDetailsViewController.swift */; };
 		4802613428F0CBA90018ED0C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802613328F0CBA90018ED0C /* UIViewController+Extension.swift */; };
+		4804AA4D28F35A12009014F6 /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804AA4C28F35A12009014F6 /* ListOrdersViewController.swift */; };
+		4804AA4F28F35B10009014F6 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804AA4E28F35B10009014F6 /* Order.swift */; };
 		486B45E328EDC8D8004FE32E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486B45E228EDC8D8004FE32E /* HomeViewController.swift */; };
 		4881A64628F05C6100CB3A88 /* PopularDishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881A64428F05C6100CB3A88 /* PopularDishesCollectionViewCell.swift */; };
 		4881A64728F05C6100CB3A88 /* PopularDishesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4881A64528F05C6100CB3A88 /* PopularDishesCollectionViewCell.xib */; };
@@ -63,6 +65,8 @@
 		3F2319F9D52965A503B31758 /* Pods_Yummie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yummie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4802613128F0BBE60018ED0C /* DishDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsViewController.swift; sourceTree = "<group>"; };
 		4802613328F0CBA90018ED0C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		4804AA4C28F35A12009014F6 /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
+		4804AA4E28F35B10009014F6 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		486B45E228EDC8D8004FE32E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4881A64428F05C6100CB3A88 /* PopularDishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4881A64528F05C6100CB3A88 /* PopularDishesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishesCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -148,6 +152,14 @@
 				4802613128F0BBE60018ED0C /* DishDetailsViewController.swift */,
 			);
 			path = DishDetails;
+			sourceTree = "<group>";
+		};
+		4804AA4B28F359F9009014F6 /* ListOrders */ = {
+			isa = PBXGroup;
+			children = (
+				4804AA4C28F35A12009014F6 /* ListOrdersViewController.swift */,
+			);
+			path = ListOrders;
 			sourceTree = "<group>";
 		};
 		4853D54C28EDA4C8001AC8DD /* Views */ = {
@@ -306,6 +318,7 @@
 				48FA475428ECCA7200BD762C /* OnboardingSlide.swift */,
 				48B8633228EF120500E67BCC /* DishCategory.swift */,
 				4881A64828F0601E00CB3A88 /* Dish.swift */,
+				4804AA4E28F35B10009014F6 /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +326,7 @@
 		48FA474C28ECBE5A00BD762C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4804AA4B28F359F9009014F6 /* ListOrders */,
 				48E3F91128F2FCDC0089AB97 /* ListDishes */,
 				4802613028F0BBC10018ED0C /* DishDetails */,
 				486B45E128EDC8C3004FE32E /* Home */,
@@ -604,6 +618,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48E3F90F28F2F7EF0089AB97 /* DishListTableViewCell.swift in Sources */,
+				4804AA4D28F35A12009014F6 /* ListOrdersViewController.swift in Sources */,
+				4804AA4F28F35B10009014F6 /* Order.swift in Sources */,
 				4802613428F0CBA90018ED0C /* UIViewController+Extension.swift in Sources */,
 				48B8633028EF0FB900E67BCC /* CategoryCollectionViewCell.swift in Sources */,
 				48FA475528ECCA7200BD762C /* OnboardingSlide.swift in Sources */,
