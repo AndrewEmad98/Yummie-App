@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -13,28 +14,34 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var popularDishesCollectionView: UICollectionView!
     @IBOutlet weak var foodCategoryCollectionView: UICollectionView!
     
-    var categories : [DishCategory] = [
-        .init(id: "id1", name: "Egypt dishes1", image: "https://picsum.photos/200/300"),
-        .init(id: "id2", name: "Egypt dishes2", image: "https://picsum.photos/200/300"),
-        .init(id: "id3", name: "Egypt dishes3", image: "https://picsum.photos/200/300"),
-        .init(id: "id4", name: "Egypt dishes4", image: "https://picsum.photos/200/300"),
-        .init(id: "id4", name: "Egypt dishes5", image: "https://picsum.photos/200/300")
-    ]
-    var popularDishes : [Dish] = [
-        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
-        .init(id: "id2", name: "Tagen", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 300),
-        .init(id: "id3", name: "Fool", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
-    ]
-    
-    var chefSpecialDishes : [Dish] = [
-        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
-        .init(id: "id2", name: "Tagen", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 300),
-        .init(id: "id3", name: "Fool", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
-    ]
+    var categories : [DishCategory] = []
+    var popularDishes : [Dish] = []
+    var chefSpecialDishes : [Dish] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibFiles()
+        fetchCategories()
+    }
+    
+    private func fetchCategories(){
+        ProgressHUD.show()
+        NetworkService.shared.fetchCategoriesAPI{ [weak self] result in
+            switch result{
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            case .success(let data):
+                ProgressHUD.dismiss()
+                self?.categories = data.categories ?? []
+                self?.popularDishes = data.populars ?? []
+                self?.chefSpecialDishes = data.specials ?? []
+                DispatchQueue.main.async {
+                    self?.foodCategoryCollectionView.reloadData()
+                    self?.chefsSpecialsCollectionView.reloadData()
+                    self?.popularDishesCollectionView.reloadData()
+                }
+            }
+        }
     }
     private func registerNibFiles(){
         foodCategoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
@@ -84,14 +91,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             // go to category list screen
             let currentCategory = categories[indexPath.row]
             let listDishesVC = ListDishesViewController.instantiate()
-//            var categoryDishes : [Dish] = []
-//            for dish in popularDishes {
-//                if dish.id == currentCategory.id {
-//                    categoryDishes.append(dish)
-//                }
-//            }
-//            listDishesVC.categoryDishes = categoryDishes
-            listDishesVC.category = currentCategory.name
+            listDishesVC.category = currentCategory
             navigationController?.pushViewController(listDishesVC, animated: true)
         }else {
             let dishDetailsVC = DishDetailsViewController.instantiate()

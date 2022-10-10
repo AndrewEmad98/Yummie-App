@@ -6,22 +6,36 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListDishesViewController: UIViewController {
 
     @IBOutlet weak var listDishesTableView: UITableView!
-    var categoryDishes : [Dish] = [
-        .init(id: "id1", name: "Koshri", description: "this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt this is the traditional dish in egypt", image: "https://picsum.photos/200/300", calories: 200),
-        .init(id: "id2", name: "Tagen", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 300),
-        .init(id: "id3", name: "Fool", description: "this is a popular dish in egypt", image: "https://picsum.photos/200/300", calories: 200)
-    ]
-    var category : String!
+    var categoryDishes : [Dish] = []
+    var category : DishCategory!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = category
+        title = category.title!
         registerCell()
+        fetchCategories()
     }
+    private func fetchCategories(){
+        ProgressHUD.show()
+        NetworkService.shared.fetchCategoriesByIDAPI(categoryID: category.id!){ [weak self] result in
+            switch result{
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            case .success(let data):
+                ProgressHUD.dismiss()
+                self?.categoryDishes = data
+                DispatchQueue.main.async {
+                    self?.listDishesTableView.reloadData()
+                }
+            }
+        }
+    }
+    
     private func registerCell(){
         listDishesTableView.register(UINib(nibName: DishListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DishListTableViewCell.identifier)
     }
