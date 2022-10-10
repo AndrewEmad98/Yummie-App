@@ -100,6 +100,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             }else{
                 dishDetailsVC.currentDish = chefSpecialDishes[indexPath.row]
             }
+            dishDetailsVC.isComeFromOrders = false
             navigationController?.pushViewController(dishDetailsVC, animated: true)
         }
     }

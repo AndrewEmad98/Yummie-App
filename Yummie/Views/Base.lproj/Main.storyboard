@@ -466,6 +466,7 @@
                         <outlet property="dishName" destination="UC7-w6-fi4" id="A7k-GJ-OU8"/>
                         <outlet property="fullDescriptionLabel" destination="OBs-8C-VCd" id="F31-Ke-2sl"/>
                         <outlet property="inputTextField" destination="vdb-9t-dE5" id="ZGn-EY-CQa"/>
+                        <outlet property="placeOrderButton" destination="S5f-ur-eym" id="2FM-Ec-Tsi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kN-Rh-1YO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

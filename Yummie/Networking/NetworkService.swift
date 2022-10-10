@@ -13,11 +13,17 @@ struct NetworkService {
     private init(){}
     
 
+    func placeOrder(dishID: String, name: String, completion: @escaping(Result<Order,Error>)->Void){
+        request(route: .PlaceOrder(dishID: dishID), method: .post,parameters: ["name":name] ,completion: completion)
+    }
     func fetchCategoriesAPI(completion: @escaping(Result<AllCategories,Error>)->Void){
         request(route: .fetchAllCategories, method: .get, completion: completion)
     }
     func fetchCategoriesByIDAPI(categoryID: String, completion: @escaping(Result<[Dish],Error>)->Void){
         request(route: .FetchDishesByCategory(categoryID: categoryID), method: .get, completion: completion)
+    }
+    func fetchOrders(completion: @escaping(Result<[Order],Error>)->Void){
+        request(route: .getOrders, method: .get, completion: completion)
     }
     
     private func request<T:Codable>(route: Route, method: Method, parameters: [String:Any]? = nil, completion: @escaping(Result<T,Error>)->Void){
@@ -33,10 +39,7 @@ struct NetworkService {
                 completion(.failure(AppError.serverError(error.localizedDescription)))
             }else if let data = data {
                 result = .success(data)
-                let responseString = String(data: data, encoding: .utf8) ?? "could not make a string from the response"
-                print(responseString)
                 handleResponse(result: result, completion: completion)
-
             }
         }.resume()
     }

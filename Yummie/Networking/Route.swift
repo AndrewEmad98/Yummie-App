@@ -10,9 +10,9 @@ import Foundation
 enum Route {
     static let baseURL = "https://yummie.glitch.me"
     case fetchAllCategories
-    case PlaceOrder
+    case PlaceOrder(dishID: String)
     case FetchDishesByCategory(categoryID: String)
-    case dishCategories
+    case getOrders
     
     var fullURLPath : String {
         switch self {
@@ -20,10 +20,10 @@ enum Route {
             return Self.baseURL + "/dish-categories"
         case .FetchDishesByCategory(let categoryID):
             return Self.baseURL + "/dishes/\(categoryID)"
-        case .PlaceOrder:
-            return Self.baseURL + "/dish-categories"
-        case .dishCategories:
-            return Self.baseURL + "/dishes/cat1"
+        case .PlaceOrder(let dishID):
+            return Self.baseURL + "/orders/\(dishID)"
+        case .getOrders:
+            return Self.baseURL + "/orders"
         }
     }
 }
