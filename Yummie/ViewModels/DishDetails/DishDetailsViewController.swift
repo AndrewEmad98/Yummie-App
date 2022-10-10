@@ -46,6 +46,9 @@ class DishDetailsViewController: UIViewController {
                 ProgressHUD.dismiss()
             }
         }
+        DispatchQueue.main.async {
+            self.inputTextField.text = nil
+        }
     }
     
     @IBAction func placeOrderClicked(_ sender: UIButton) {
