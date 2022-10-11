@@ -313,7 +313,7 @@
 				48FA474D28ECBE8B00BD762C /* CustomViews */,
 				48FA474B28ECBE5200BD762C /* Models */,
 				4853D54C28EDA4C8001AC8DD /* Views */,
-				48FA474C28ECBE5A00BD762C /* ViewModels */,
+				48FA474C28ECBE5A00BD762C /* Controllers */,
 				48FA472428ECB65700BD762C /* Assets.xcassets */,
 				48FA472928ECB65700BD762C /* Info.plist */,
 			);
@@ -349,7 +349,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		48FA474C28ECBE5A00BD762C /* ViewModels */ = {
+		48FA474C28ECBE5A00BD762C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				4804AA4B28F359F9009014F6 /* ListOrders */,
@@ -358,7 +358,7 @@
 				486B45E128EDC8C3004FE32E /* Home */,
 				48FA474E28ECBE9B00BD762C /* Onboarding */,
 			);
-			path = ViewModels;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		48FA474D28ECBE8B00BD762C /* CustomViews */ = {
