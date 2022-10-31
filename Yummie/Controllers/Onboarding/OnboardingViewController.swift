@@ -35,19 +35,11 @@ class OnboardingViewController: UIViewController {
         collectionView.dataSource = self
         pageControl.numberOfPages = slides.count
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let onBoarding = getOnBoardingFlag()
-        if onBoarding{
-            performSegue(withIdentifier: "GoToHomeNC", sender: self)
-        }
-    }
+
     private func setOnBoardingFlag(onboarding: Bool){
         defaults.set(onboarding, forKey: "userGetStartedBefore")
     }
-    private func getOnBoardingFlag() ->Bool{
-        defaults.bool(forKey: "userGetStartedBefore")
-    }
+    
     @IBAction func nextButtonClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
             setOnBoardingFlag(onboarding: true)
