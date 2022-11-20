@@ -4,7 +4,8 @@
 # Yummie ✓
 
 Food Reservation App
-Technoligies: MVC, Generic Networking Layer, Custom Cells, Working in all orientations and devices, REST Api, POP, Extensions
+
+Technologies: MVC, Generic Networking Layer, Custom Cells, Working in all orientations and devices, REST API, POP, Extensions
                                                         
                                                           
 
