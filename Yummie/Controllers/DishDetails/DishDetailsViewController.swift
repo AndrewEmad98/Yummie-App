@@ -23,7 +23,7 @@ class DishDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        if isComeFromOrders{
+        if isComeFromOrders {
             inputTextField.isHidden = true
             placeOrderButton.isHidden = true
         }

@@ -56,6 +56,7 @@ extension ListDishesViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsVC = DishDetailsViewController.instantiate()
         detailsVC.currentDish = categoryDishes[indexPath.row]
+        detailsVC.isComeFromOrders = false
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     
